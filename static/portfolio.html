@@ -1,0 +1,36 @@
+<!-- templates/portfolio/portfolio.html -->
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Portfolio</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                {% for category in categories %}
+                    <button class="filter-btn" data-filter="{{ category.slug }}">{{ category.name }}</button>
+                {% endfor %}
+            </div>
+            <div class="portfolio-grid">
+                {% for project in projects %}
+                    <div class="portfolio-item" data-category="{{ project.category.slug }}">
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                        <div class="portfolio-overlay">
+                            <h3>{{ project.title }}</h3>
+                            <p>{{ project.category.name }}</p>
+                            <a href="{% url 'portfolio:project_detail' project.slug %}" class="portfolio-link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>No projects available.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

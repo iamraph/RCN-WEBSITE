@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url("images/background-image.jpg");
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+
+    <title>RCN's Website - Professional Portfolio</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="RCN's professional portfolio website showcasing projects, skills, and expertise">
+    <meta name="keywords" content="RCN, portfolio, web development, projects, professional">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="mystyle.css">
+    
+    <!-- JavaScript -->
+    <script src="main.js" defer></script>
+    <!-- Removed routes/auth.js as it is a server-side file -->
+    <!-- Removed models/Blog.js as it is likely a server-side file -->
+    <!-- Removed models/Portfolio.js as it is a server-side file -->
+    <!-- Removed models/User.js as it is likely a server-side file -->
+    
+    
+</head>
+ <body>
+    
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">RCN</a>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <!-- Navigation items will be inserted here dynamically -->
+            </ul>
+        </div>
+        <div class="theme-toggle">
+            <button id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>RCN's WEBSITE</h1>
+                <h2>Welcome to my professional portfolio</h2>
+                <p>Showcasing my projects, skills, and expertise in web development</p>
+                <div class="hero-buttons">
+                    <a href="portfolio.html" class="btn btn-primary">View Portfolio</a> <!-- Fixed link -->
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I am a passionate web developer with expertise in creating responsive, user-friendly websites. With a strong foundation in HTML, CSS, and JavaScript, I build digital experiences that engage and inspire.</p>
+                        <p>My approach combines cutting-edge technology with beautiful design to create websites that truly stand out from the competition.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/profile.jpg" alt="RCN Profile Picture">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>My Services</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Custom websites built with clean, efficient code that performs well across all devices.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Intuitive user interfaces and engaging user experiences that keep visitors coming back.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Responsive Design</h3>
+                        <p>Websites that look and function perfectly on any device, from desktop to mobile.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>My Portfolio</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="app">App Development</button>
+                    <button class="filter-btn" data-filter="other">Other Projects</button>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-category="web">
+                        <img src="images/portfolio/project1.jpg" alt="Project 1">
+                        <div class="portfolio-overlay">
+                            <h3>E-commerce Website</h3>
+                            <p>Web Design</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="app">
+                        <img src="images/portfolio/project2.png" alt="Project 2">
+                        <div class="portfolio-overlay">
+                            <h3>Mobile App</h3>
+                            <p>App Development</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="web">
+                        <img src="images/portfolio/project3.png" alt="Project 3">
+                        <div class="portfolio-overlay">
+                            <h3>Corporate Website</h3>
+                            <p>Web Design</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="web">
+                        <img src="images/portfolio/project4.png" alt="Illustration Project"> <!-- Updated alt attribute -->
+                        <div class="portfolio-overlay">
+                            <h3>Illustrations</h3>
+                            <p>An Illustration</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Audio Section -->
+        <section id="featured-audio" class="audio-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Audio</h2>
+                    <div class="underline"></div>
+               </div>
+               <div class="audio-container">
+                    <div class="audio-info">
+                        <div class="audio-artwork">
+                            <img src="images/testimonials/audio-cover.jpg" alt="Tems - Higher">
+                        </div>
+                        <div class="audio-details">
+                            <h3>Tems - Higher</h3>
+                            <p>Featured track from my music collection</p>
+                        </div>
+                    </div>
+                    <div class="audio-player">
+                        <audio id="myAudio" preload="metadata">
+                            <source src="audio/Tems - Higher.mp3" type="audio/mpeg">
+                            <source src="audio/Tems - Higher.ogg" type="audio/ogg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="player-controls">
+                            <button id="playPauseBtn" class="control-btn play-btn" onclick="playPause()">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                            <div class="progress-container">
+                                <div class="progress-bar" id="progressBar"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                            </div>
+                            <button id="muteBtn" class="control-btn mute-btn" onclick="toggleMute()">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Video Section -->
+<section id="featured-video" class="video-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured Video</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="video-container">
+            <video class="featured-video" controls poster="images/video-poster.jpg"> <!-- Added controls attribute -->
+                <source src="video/Harvard CS50’s Introduction to Programming with Python – Full University Course.mp4" type="video/mp4">
+                <source src="video/Harvard CS50’s Introduction to Programming with Python – Full University Course.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+        
+        
+      
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Testimonials</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"RCN delivered an exceptional website that perfectly captured our brand's essence. The attention to detail and responsive design exceeded our expectations."</p>
+                            <div class="client-info">
+                                <img src="images/testimonials/client1.jpg" alt="Client 1">
+                                <div class="client-details">
+                                    <h4>John Smith</h4>
+                                    <p>CEO, Tech Solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Location</h3>
+                                <p>Lagos, Nigeria</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>nonsoo18@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Phone</h3>
+                                <p>+234 706 246 3747</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://www.twitter.com/iamnonso_" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>RCN</h3>
+                    <p>Creating digital experiences that inspire.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> RCN. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Mobile menu toggle
+        function showMenu() {
+            document.getElementById("navLinks").style.right = "0";
+        }
+        
+        function hideMenu() {
+            document.getElementById("navLinks").style.right = "-200px";
+        }
+        
+        // Audio player functionality
+        function playPause() {
+            const audio = document.getElementById('myAudio');
+            const playBtn = document.getElementById('playPauseBtn');
+            
+            if (audio.paused) {
+                audio.play();
+                playBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                playBtn.classList.remove('playing');
+            }
+        }
+        
+        function toggleMute() {
+            const audio = document.getElementById('myAudio');
+            const muteBtn = document.getElementById('muteBtn');
+            
+            audio.muted = !audio.muted;
+            if (audio.muted) {
+                muteBtn.querySelector('i').className = 'fas fa-volume-mute';
+            } else {
+                muteBtn.querySelector('i').className = 'fas fa-volume-up';
+            }
+        }
+        
+        // Update progress bar
+        document.getElementById('myAudio').addEventListener('timeupdate', function() {
+            const audio = this;
+            const progressBar = document.getElementById('progressBar');
+            const currentTimeDisplay = document.getElementById('currentTime');
+            const durationDisplay = document.getElementById('duration');
+            
+            // Update progress bar
+            const percentage = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = percentage + '%';
+            
+            // Update time displays
+            currentTimeDisplay.textContent = formatTime(audio.currentTime);
+            durationDisplay.textContent = formatTime(audio.duration);
+        });
+        
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "0:00";
+            
+            const minutes = Math.floor(seconds / 60);
+            seconds = Math.floor(seconds % 60);
+            return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        }
+        
+
+    
+        
+        // Update progress bar
+        document.getElementById('myVideo').addEventListener('timeupdate', function() {
+            const video = this;
+            const progressBar = document.getElementById('progressBar');
+            const currentTimeDisplay = document.getElementById('currentTime');
+            const durationDisplay = document.getElementById('duration');
+            
+            // Update progress bar
+            const percentage = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = percentage + '%';
+            
+            // Update time displays
+            currentTimeDisplay.textContent = formatTime(video.currentTime);
+            durationDisplay.textContent = formatTime(video.duration);
+        });
+        
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "0:00";
+            
+            const minutes = Math.floor(seconds / 60);
+            seconds = Math.floor(seconds % 60);
+            return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        }
+
+
+
+        // Back to top button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("backToTop").style.display = "block";
+            } else {
+                document.getElementById("backToTop").style.display = "none";
+            }
+        };
+        
+        document.getElementById("backToTop").addEventListener("click", function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Set current year in footer
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize audio metadata
+            const audio = document.getElementById('myAudio');
+            audio.addEventListener('loadedmetadata', function() {
+                document.getElementById('duration').textContent = formatTime(audio.duration);
+            });
+            
+            // Portfolio filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body> 
+
+
+</html>
